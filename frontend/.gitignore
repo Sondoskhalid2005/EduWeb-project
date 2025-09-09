@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# production build
+/build
+/dist
+
+# misc
+.env
+.DS_Store
+# dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# build
+dist/
+build/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# system files
+.DS_Store
+Thumbs.db
