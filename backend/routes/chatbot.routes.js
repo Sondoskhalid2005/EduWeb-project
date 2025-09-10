@@ -1,23 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { askChatbot, getCourseInfo } = require('../controllers/chatbot.controller');
+const { askChatbot } = require("../controllers/chatbot.controller.js");
 
-// Create rate limiter in routes file
-const rateLimit = require('express-rate-limit');
-
-const chatbotLimiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minute
-  max: 10, // limit each IP to 10 requests per windowMs
-  message: "Too many questions, please try again later."
-});
-
-// Apply rate limiting to chatbot routes
-router.use(chatbotLimiter);
-
-// Main chatbot endpoint
-router.post('/ask', askChatbot);
-
-// Additional endpoint to get specific course information
-router.get('/course/:courseId', getCourseInfo);
+// POST /api/chat
+router.post("/", askChatbot);
 
 module.exports = router;
