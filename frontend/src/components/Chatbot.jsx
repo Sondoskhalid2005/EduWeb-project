@@ -1,25 +1,41 @@
 import React, { useState } from "react";
 import "../pages/style.css";
-const faqs = {
 
-  "What courses are available?": "We offer 15 programming courses including Web Dev, React, Python, AI, and more.",
-  "How can I enroll?": "Go to the Courses page and click the Enroll button for any course.",
-  "Can I track my progress?": "Yes! Your enrolled courses show progress in your Dashboard.",
-  "Is there a free trial?": "Yes,all courses are free."
-};
-export default function Chatbot()  {
+export default function Chatbot() {
   const [visible, setVisible] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  
-  const handleSend = () => {
-    if (!input) return;
-    const userMessage = { text: input, sender: "user" };
-    let reply = faqs[input] || "Sorry, I don't understand your question.";
-    const botMessage = { text: reply, sender: "bot" };
 
-    setMessages(prev => [...prev, userMessage, botMessage]);
+  const handleSend = async () => {
+    if (!input) return;
+
+    const userMessage = { text: input, sender: "user" };
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+
+    try {
+      // Call backend chatbot API
+      const response = await fetch("http://localhost:4000/api/chat/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input }),
+      });
+
+      const data = await response.json();
+
+      const botMessage = {
+        text: data.reply || "Sorry, I couldn't get a response.",
+        sender: "bot",
+      };
+
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error("Chatbot API error:", error);
+      setMessages((prev) => [
+        ...prev,
+        { text: "Error connecting to chatbot.", sender: "bot" },
+      ]);
+    }
   };
 
   return (
@@ -51,4 +67,4 @@ export default function Chatbot()  {
       )}
     </div>
   );
-};
+}
