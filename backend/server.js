@@ -11,11 +11,11 @@ const chatbotRoutes = require('./routes/chatbot.routes.js');
 
 app.use(express.json())
 app.use(cors()) // to connect back with front
-console.log(process.env.PORT)
+console.log(process.env.PORT || 4000)
 
 mongodb.connect(process.env.URL)
     .then(()=>{
-     app.listen(process.env.PORT, ()=>{
+     app.listen(process.env.PORT || 4000, ()=>{
     console.log("connected to the server successfuly")}) 
         })
     .catch((error)=>{console.log("error connecting to database!")})
