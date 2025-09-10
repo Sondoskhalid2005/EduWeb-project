@@ -42,6 +42,7 @@ navigate("/teacher-dashbord", { state: { course } });
     <>
       <div className="eduweb-container">
 <Link to="/logout" className="extra-link2">Log Out</Link>
+<Link to="/creat-courses" className="extra-link3">Creat New Course!</Link>
         <section className="profile-container">
           <div >
             <h1 >My Profile</h1>

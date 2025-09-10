@@ -78,7 +78,7 @@ export default function Dashboard(){
   {!selectlesson.task && (
   <Link 
     to={`/quiz/${selectlesson._id}`} 
-    className="extra-link2"
+    className="extra-link"
   >
    Take  Quiz !
   </Link>

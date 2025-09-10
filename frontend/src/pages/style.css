@@ -512,15 +512,15 @@ input::placeholder {
   color: #fff;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
   font-size: 24px;
 }
 
 .chatbot-window {
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 600px;
   background-color: #1c1c1c;
   color: #fff;
   border-radius: 10px;
@@ -856,4 +856,16 @@ position: absolute;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   margin-bottom: 15px;
+}.extra-link3{
+position: absolute;
+  top: 70px;      
+  right: 20px;    
+  padding: 12px 25px;
+  border: 2px solid #444;
+  background: #f06292;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 45px;
 }

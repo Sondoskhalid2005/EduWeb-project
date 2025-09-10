@@ -41,7 +41,7 @@ const getRelevantData = async (message) => {
   try {
     // Get courses data if question is about courses
     if (lowercaseMessage.includes('course') || lowercaseMessage.includes('class')) {
-      contextData.courses = await Course.find({}).select('title description category price duration').limit(10);
+      contextData.courses = await Course.find({}).select('title description category price duration').limit(100);
     }
 
     // Get instructors data if question is about instructors/teachers
@@ -54,12 +54,12 @@ const getRelevantData = async (message) => {
       contextData.enrollments = await Enrollment.find({})
         .populate('courseId', 'title')
         .populate('studentId', 'name')
-        .limit(10);
+        .limit(50);
     }
 
     // Get lessons data if question is about lessons
     if (lowercaseMessage.includes('lesson') || lowercaseMessage.includes('topic')) {
-      contextData.lessons = await Lesson.find({}).select('title content duration').limit(10);
+      contextData.lessons = await Lesson.find({}).select('title content duration').limit(50);
     }
 
     // Get students data if question is about students (be careful with sensitive data)
