@@ -386,7 +386,7 @@ input::placeholder {
 }
 
 /* ================= Dashboard Page================= */
-.dashboard {
+/* .dashboard {
   display: flex;
   height: 100vh;
   background-color: #1c1c1c;
@@ -399,9 +399,23 @@ input::placeholder {
   background-color: #2c2c2c;
   padding: 20px;
   overflow-y: auto;
-  border-right: 1px solid #444;
-}
+  border-right: 1px solid #444;} */
 
+.dashboard {
+  display: flex;
+  flex-direction: row-reverse;  
+  min-height: 60%;
+  height: 150vh;
+}
+.dashboard-sidebar {
+  min-width: 25%;
+   height:  60%;
+  background-color: #2c2c2c;
+  padding: 20px;
+  overflow-y: auto;
+  border-left: 1px solid #444;  
+  border-right: none;          
+} 
 .dashboard-sidebar h2 {
   color: #f06292;
   margin-bottom: 15px;
@@ -471,13 +485,18 @@ input::placeholder {
 }
 
 .toggle-btn {
-  margin-bottom: 20px;
+ position: absolute;
+  bottom: 20px;   /* stick near bottom */
+  right: 20px;    /* stick near right */
   padding: 8px 15px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   background-color: #f06292;
   color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 /* ================= chatBot================= */
 /* src/components/Chatbot.css */
@@ -802,7 +821,7 @@ input::placeholder {
     color: #f06292;
     margin-bottom: 5px;
 }.extra-link2{
-  position: absolute;
+position: absolute;
   top: 15px;      
   right: 20px;    
   padding: 12px 25px;
@@ -813,6 +832,28 @@ input::placeholder {
   border-radius: 8px;
   cursor: pointer;
   min-width: 45px;
-  transition: 0.3s;
    
+}.lesson-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+  max-width: 70%;  /* keeps text aligned with video width */
+  align-items: center; /* centers everything */
+  text-align: center; /* centers everything */
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  align-items: center; /* centers everything */
+}
+
+.video-container video {
+  width: 90%;             /* smaller size */
+  max-width: 700px;       /* cap for large screens */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
 }

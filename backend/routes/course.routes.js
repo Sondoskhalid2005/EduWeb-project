@@ -14,7 +14,7 @@ router.get("/my-courses", authMiddleware.authMiddleware,userAuth.instructorAuth,
 router.get("/get-courses",  controller.getcourses);
 
 // Get task questions by lessonId
-router.post("/task-questions/:lessonId",authMiddleware.authMiddleware, controller.getTaskquestions);
+router.post("/task-questions/:lessonId", controller.getTaskquestions);
 
 // Get all lessons of a course
 router.get("/:courseId", authMiddleware.authMiddleware, controller.getCourseLessons);

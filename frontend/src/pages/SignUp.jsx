@@ -34,7 +34,7 @@ const navigate = useNavigate();
 
         if(response.status === 201 || response.status === 200){
             console.log("signed up successfully heading to home page!")
-            navigate("/Home")
+            navigate("/login")
         }
 
     }catch(error){

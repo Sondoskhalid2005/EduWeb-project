@@ -22,7 +22,7 @@ const handelSavingImage=async(e)=>{
     if (!file) return;
     try{const formData = new FormData();
      formData.append("file", file);
-     formData.append("upload_preset", "webProjectFiles");
+     formData.append("upload_preset", "newone");
      formData.append("folder", "course-images");
 
     const cloudinarydata = await axios.post(
@@ -206,7 +206,7 @@ const handelSavingvideoUrl=async(e)=>{
       
      const formData = new FormData();
      formData.append("file", file);
-     formData.append("upload_preset", "webproject");
+     formData.append("upload_preset", "newone");
      formData.append("folder", "lessons-videos");
    
     const cloudinarydata = await axios.post(

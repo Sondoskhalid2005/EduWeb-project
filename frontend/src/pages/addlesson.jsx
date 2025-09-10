@@ -42,7 +42,7 @@ const handelSavingvideoUrl=async(e)=>{
       
      const formData = new FormData();
      formData.append("file", file);
-     formData.append("upload_preset", "webproject");
+     formData.append("upload_preset", "newone");
      formData.append("folder", "lessons-videos");
    
     const cloudinarydata = await axios.post(
@@ -69,11 +69,11 @@ const handelSavingvideoUrl=async(e)=>{
 
  // 🔹 Add Lesson
 const handleAddLessonClick = async () => {
-    if (!finishedUploading||lessonTitle) return;
-  if (!videoUrl) {
-    setError("Please wait until the video finishes uploading.");
-    return;
-  }
+  //   if (!finishedUploading||lessonTitle.trim()) return;
+  // if (!videoUrl) {
+  //   setError("Please wait until the video finishes uploading.");
+  //   return;
+  // }
     try {
       console.log("you jj");
       console.log(coursename,lessonTitle,lessonContent,videoUrl);
@@ -99,7 +99,7 @@ const handleAddLessonClick = async () => {
         console.log("Lesson added:", response.data.lesson);
          toastr.success("Lesson added successfully ✅");
         // setCoursename("")
-        lessons(prev=>[...prev,response.data.lesson])
+        setlessons(prev=>[...prev,response.data.lesson])
         setLessonTitle("")
         setLessonContent("")
         setvideoUrl("")
@@ -108,7 +108,7 @@ const handleAddLessonClick = async () => {
       setError(`Error adding lesson: ${ error.response.data.msg}`)
     }
     } catch (err) {
-      setError(`Error adding lesson: ${ error.response?.data?.msg || error.message}`);
+      setError(`Error adding lesson: ${ error.response?.data?.msg || err.message}`);
       console.error("Error adding lesson");
     }
 };

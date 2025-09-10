@@ -50,9 +50,9 @@ export default function Dashboard(){
                 onClick={() =>{setselectlesson(lesson)}}
               >
                 {`Lesson ${lesson.position}`}
-                <div>
-                  {/* <div className="progress" style={{ width: `${course.progress}%` }}></div> */}
-                </div>
+                {/* <div>
+                  <div className="progress" style={{ width: `${50}%` }}></div>
+                </div> */}
               </li>
             ))}
           </ul>
@@ -68,24 +68,25 @@ export default function Dashboard(){
         </button>
 
         {selectlesson ? (
-          <div className="course-detail">
-            <h2>{selectlesson.title}</h2>
+          <div className="video-container">
+            <h2  className="lesson-title">{selectlesson.title}</h2>
+             <p  className="lesson-description">{`Lesson discription :${selectlesson.content}`}</p>
             {/* <p>{selectlesson.content}</p> */}
-            <video controls width="70%">
+            <video  controls width="70%">
   <source src={selectlesson.videoUrl} type="video/mp4" />Your browser does not support the video tag.</video>
-  
+ 
   {!selectlesson.task && (
   <Link 
     to={`/quiz/${selectlesson._id}`} 
-    className="quiz-link"
+    className="extra-link2"
   >
-   Take lesson Quiz !
+   Take  Quiz !
   </Link>
 )}
-<h2>{`Lesson Material:${selectlesson.content}`}</h2>
+
           </div>
         ) : (
-          <p>Select a Lesson to view .</p>
+          <p >Select a Lesson to view .</p>
         )}
         
         

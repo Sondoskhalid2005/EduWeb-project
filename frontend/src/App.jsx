@@ -26,7 +26,7 @@ import Logout from "./pages/Logout";
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/addlesson" element={<AddLesson />} />
-        <Route path="/student-dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/creat-courses" element={<CreatCourses />} />
         <Route path="/student-profile" element={<StudentProfile />} />
         <Route path="/teacher-profile" element={<IntstructorProfile />} />

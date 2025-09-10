@@ -2,12 +2,18 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
 import "./style.css";
-
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 export default function Login() {
 const [formData, setFormData] = useState({role:"",email: "",password:"" });
 const [error, setError] = useState(""); 
 const navigate = useNavigate();
- 
+  toastr.options={
+  positionClass: "toast-top-center",
+  timeOut: "2000", // 3 seconds
+  progressBar: true,
+  closeButton: true,
+ } // for notification
 const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -34,7 +40,8 @@ const handelsubmit=async(e)=>{
             sessionStorage.setItem("role", response.data.role);
             sessionStorage.setItem("username", response.data.username);
             sessionStorage.setItem("userid", response.data.id);
-            sessionStorage.setItem("email", response.data.email);
+            sessionStorage.setItem("email", response.data.email);            
+            toastr.success(`✅ Loged In Successfully, WELCOME ${response.data.username} !`)
           navigate("/")   
             
              

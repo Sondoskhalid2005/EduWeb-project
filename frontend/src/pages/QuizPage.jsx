@@ -26,10 +26,13 @@ export default function QuizPage() {
     }
   }, [lessonId]);
 const fetchTask = async () => {
-     try{ console.log("lesson id ", lessonId);
+     try{ console.log("lesson id ", lessonId,sessionStorage.getItem("token"));
       
       const res = await axios.post(
-        `http://localhost:4000/courses/task-questions/${lessonId}`
+        `http://localhost:4000/courses/task-questions/${lessonId}`,{
+            headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+          },
+
       );
       console.log(res.status);
       
