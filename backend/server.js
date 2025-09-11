@@ -4,7 +4,7 @@ const mongodb = require('mongoose');
 const cors = require("cors");
 const app = express();
 
-const authrouter = require('../backend/routes/auth.routes');
+const authrouter = require('./routes/auth.routes');
 const instructorRouter = require('./routes/instructor.routes');
 const studentsRouter = require('./routes/students.routes');
 const coursesRouter = require('./routes/course.routes');
