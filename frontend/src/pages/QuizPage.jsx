@@ -29,7 +29,7 @@ const fetchTask = async () => {
      try{ console.log("lesson id ", lessonId,sessionStorage.getItem("token"));
       
       const res = await axios.post(
-        `http://localhost:4000/courses/task-questions/${lessonId}`,{
+        `http://eduweb-project.onrender.com/courses/task-questions/${lessonId}`,{
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },
 
@@ -66,7 +66,7 @@ const getgrade = async(e)=>{
     console.log(taskId,userAnswers);
     
 const res = await axios.post(
-       `http://localhost:4000/student/get-grade/${taskId}`,
+       `http://eduweb-project.onrender.com/student/get-grade/${taskId}`,
        {studentAnswers:userAnswers},
        {
           headers: {

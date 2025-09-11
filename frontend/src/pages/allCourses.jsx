@@ -10,7 +10,7 @@ const [courses, setcourses] = useState([]);
 useEffect(() => {
   const fetchCourses = async () => {
 try{
-    const response =  await axios.get("http://localhost:4000/courses/get-courses",
+    const response =  await axios.get("http://eduweb-project.onrender.com/courses/get-courses",
           {
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },)
@@ -32,7 +32,7 @@ const handleEnroll = async(course) => {
       sessionStorage.setItem("enrolledcourseid",course._id)
         console.log(sessionStorage.getItem("token"));
         
-        const response = await axios.post(`http://localhost:4000/student/inroll-student/${course._id}`,{},{
+        const response = await axios.post(`http://eduweb-project.onrender.com/student/inroll-student/${course._id}`,{},{
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },)
           console.log("heremmm");
