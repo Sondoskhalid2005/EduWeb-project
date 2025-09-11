@@ -232,7 +232,7 @@ const handelSavingvideoUrl=async(e)=>{
 };
  // 🔹 Add Lesson
 const handleAddLessonClick = async () => {
-    if (!finishedUploading||lessonTitle) return;
+    // if (!finishedUploading||lessonTitle) return;
   if (!videoUrl) {
     setError("Please wait until the video finishes uploading.");
     return;
@@ -360,7 +360,7 @@ return (
 
           {/* 🔹 Add Task Button */}
           <button
-            className="toggle-btn"
+            className="toggle-btn2"
             onClick={() =>
               setTaskFormVisible(
                 taskFormVisible === lesson._id ? null : lesson._id
@@ -372,7 +372,7 @@ return (
 
           {/* 🔹 Task Form */}
           {taskFormVisible === lesson._id && (
-            <div style={{ marginTop: 15 }}>
+            <div className="create-form" >
               <h5>Create Task</h5>
               <input
                 type="text"
@@ -427,7 +427,7 @@ return (
                 </div>
               ))}
 
-              <button onClick={() => handleAddTaskSubmit(lesson._id)}>
+              <button className="toggle-btn2" onClick={() => handleAddTaskSubmit(lesson._id)}>
                 Submit Task
               </button>
             </div>
