@@ -15,7 +15,7 @@ export default function Chatbot() {
 
     try {
       // Call backend chatbot API
-      const response = await fetch("http://eduweb-project.onrender.com/api/chat/ask", {
+      const response = await fetch("https://eduweb-project.onrender.com/api/chat/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),

@@ -9,7 +9,7 @@ const [courses, setcourses] = useState([]);
 useEffect(() => {
   const fetchCourses = async () => {
 try{
-    const response =  await axios.get("http://eduweb-project.onrender.com/courses/my-courses",
+    const response =  await axios.get("https://eduweb-project.onrender.com/courses/my-courses",
           {
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },)

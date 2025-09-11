@@ -7,7 +7,7 @@ export default function Logout() {
    useEffect(() => {
     const logoutUser = async () => {
     try{
-      const res = await axios.get(`http://eduweb-project.onrender.com/auth/logout`,{
+      const res = await axios.get(`https://eduweb-project.onrender.com/auth/logout`,{
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },)
           

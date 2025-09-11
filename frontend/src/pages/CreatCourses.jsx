@@ -47,7 +47,7 @@ const handleAddCourse = async() => {
   try {
     
     const response = await axios.post(
-      "http://eduweb-project.onrender.com/courses/add-course",
+      "https://eduweb-project.onrender.com/courses/add-course",
       {
         title: courseTitle,
         description: courseDesc,
@@ -242,7 +242,7 @@ const handleAddLessonClick = async () => {
       console.log(coursename,lessonTitle,lessonContent,videoUrl);
       
       const response = await axios.post(
-        "http://eduweb-project.onrender.com/courses/add-lesson",
+        "https://eduweb-project.onrender.com/courses/add-lesson",
         {
           courseTitle: coursename,
           title: lessonTitle,
@@ -279,7 +279,7 @@ const handleAddTaskSubmit = async (lessonId) => {
     try {
       // Step 1: create task
       const taskRes = await axios.post(
-        "http://eduweb-project.onrender.com/courses/add-task",
+        "https://eduweb-project.onrender.com/courses/add-task",
         {
           courseId: course._id,
           lessonId,
@@ -300,7 +300,7 @@ const handleAddTaskSubmit = async (lessonId) => {
       // Step 2: add questions
       for (const q of questions) {
         await axios.post(
-          `http://eduweb-project.onrender.com/courses/add-question/${taskId}`,
+          `https://eduweb-project.onrender.com/courses/add-question/${taskId}`,
           {
             text: q.text,
             options: q.options,
