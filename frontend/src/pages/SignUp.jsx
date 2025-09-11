@@ -24,7 +24,7 @@ const navigate = useNavigate();
             setError("password dont match ")
             return;
         }
-        const response = await axios.post("http://eduweb-project.onrender.com/auth/signup",{
+        const response = await axios.post("https://eduweb-project.onrender.com/auth/signup",{
             role:role,
             username:formData.name ,
             email:formData.email,
