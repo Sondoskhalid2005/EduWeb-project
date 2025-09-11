@@ -47,7 +47,7 @@ const handleAddCourse = async() => {
   try {
     
     const response = await axios.post(
-      "http://localhost:4000/courses/add-course",
+      "http://eduweb-project.onrender.com/courses/add-course",
       {
         title: courseTitle,
         description: courseDesc,
@@ -232,7 +232,7 @@ const handelSavingvideoUrl=async(e)=>{
 };
  // 🔹 Add Lesson
 const handleAddLessonClick = async () => {
-    if (!finishedUploading||lessonTitle) return;
+    // if (!finishedUploading||lessonTitle) return;
   if (!videoUrl) {
     setError("Please wait until the video finishes uploading.");
     return;
@@ -242,7 +242,7 @@ const handleAddLessonClick = async () => {
       console.log(coursename,lessonTitle,lessonContent,videoUrl);
       
       const response = await axios.post(
-        "http://localhost:4000/courses/add-lesson",
+        "http://eduweb-project.onrender.com/courses/add-lesson",
         {
           courseTitle: coursename,
           title: lessonTitle,
@@ -279,7 +279,7 @@ const handleAddTaskSubmit = async (lessonId) => {
     try {
       // Step 1: create task
       const taskRes = await axios.post(
-        "http://localhost:4000/courses/add-task",
+        "http://eduweb-project.onrender.com/courses/add-task",
         {
           courseId: course._id,
           lessonId,
@@ -300,7 +300,7 @@ const handleAddTaskSubmit = async (lessonId) => {
       // Step 2: add questions
       for (const q of questions) {
         await axios.post(
-          `http://localhost:4000/courses/add-question/${taskId}`,
+          `http://eduweb-project.onrender.com/courses/add-question/${taskId}`,
           {
             text: q.text,
             options: q.options,
@@ -360,7 +360,7 @@ return (
 
           {/* 🔹 Add Task Button */}
           <button
-            className="toggle-btn"
+            className="toggle-btn2"
             onClick={() =>
               setTaskFormVisible(
                 taskFormVisible === lesson._id ? null : lesson._id
@@ -372,7 +372,7 @@ return (
 
           {/* 🔹 Task Form */}
           {taskFormVisible === lesson._id && (
-            <div style={{ marginTop: 15 }}>
+            <div className="create-form" >
               <h5>Create Task</h5>
               <input
                 type="text"
@@ -427,7 +427,7 @@ return (
                 </div>
               ))}
 
-              <button onClick={() => handleAddTaskSubmit(lesson._id)}>
+              <button className="toggle-btn2" onClick={() => handleAddTaskSubmit(lesson._id)}>
                 Submit Task
               </button>
             </div>

@@ -12,7 +12,7 @@ const [courses, setcourses] = useState([]);
 useEffect(() => {
   const fetchCourses = async () => {
 try{
-    const response =  await axios.get("http://localhost:4000/student/my-enrollments",
+    const response =  await axios.get("http://eduweb-project.onrender.com/student/my-enrollments",
           {
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },)
@@ -58,7 +58,7 @@ navigate("/dashboard", { state: { course } });
       <h1 className="courses-title">My Enrollments</h1>
       <div className="courses-grid">
         {
-        courses.map((course) => (
+        courses.filter((course)=>course).map((course) => (
         <div className="edu-card1" key={course._id}>
           <img
             src={course.courseImage || "/defaultImage.jpg"}

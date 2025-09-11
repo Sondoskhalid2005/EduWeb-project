@@ -604,6 +604,21 @@ input::placeholder {
   background-color: #1c1c1c;
   color: #fff;
   transition: 0.3s;
+}.toggle-btn2 {
+    padding: 12px 25px;
+    border: 2px solid #444;
+    background: #f06292;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: 300px;
+    transition: 0.3s;
+    align-self: center;
+}
+.quiz-page button:hover {
+    filter: brightness(1.1);
 }
 .form-title {
   text-align: center;

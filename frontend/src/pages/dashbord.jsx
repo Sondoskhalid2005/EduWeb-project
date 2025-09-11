@@ -17,7 +17,7 @@ export default function Dashboard(){
        try{
         console.log(sessionStorage.getItem("enrolledcourseid"));
         
-        const response = await axios.get(`http://localhost:4000/courses/${sessionStorage.getItem("enrolledcourseid")}`,{
+        const response = await axios.get(`http://eduweb-project.onrender.com/courses/${sessionStorage.getItem("enrolledcourseid")}`,{
             headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
           },)
 
