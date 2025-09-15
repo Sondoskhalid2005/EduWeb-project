@@ -33,7 +33,7 @@ export default function Chatbot() {
       console.error("Chatbot API error:", error);
       setMessages((prev) => [
         ...prev,
-        { text: "Error connecting to chatbot.", sender: "bot" },
+        { text: error.response.data.msg, sender: "bot" },
       ]);
     }
   };
