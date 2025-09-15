@@ -18,7 +18,9 @@ const WEBSITE_TOPICS = [
   'grade', 'score', 'certificate', 'completion', 'progress',
   'login', 'register', 'profile', 'account', 'dashboard',
   'notification', 'announcement', 'discussion', 'forum',
-  'submission', 'task', 'project', 'quiz', 'test'
+  'submission', 'task', 'project', 'quiz', 'test','enrollments',
+  'enroll','my courses','my course','my class','my classes','my lessons',
+  'my lesson'
 ];
 
 
