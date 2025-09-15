@@ -17,7 +17,5 @@ router.use(chatbotLimiter);
 // Main chatbot endpoint
 router.post('/ask', askChatbot);
 
-// Additional endpoint to get specific course information
-router.get('/course/:courseId', getCourseInfo);
 
 module.exports = router;
