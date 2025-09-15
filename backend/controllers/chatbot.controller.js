@@ -167,5 +167,5 @@ const askChatbot = async (req, res) => {
 
 
 module.exports = { 
-  askChatbot,
+  askChatbot
 };
