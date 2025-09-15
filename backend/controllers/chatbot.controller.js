@@ -158,9 +158,9 @@ const askChatbot = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("Chatbot Error:", error);
+    //console.error("Chatbot Error:", error);
     res.status(500).json({ 
-      error: "I'm having trouble processing your request. Please try again!" 
+      error: "Hi there! Our chatbot is currently unavailable. Please check back later during our active hours. In the meantime, you can explore courses, lessons, and resources on the platform. Thank you for your patience!" 
     });
   }
 };
